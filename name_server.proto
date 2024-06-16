@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package nameserver;
+
+
+message RegisterRequest {
+    string username = 1;
+    string ip = 2;
+    int32 port = 3;
+}
+
+
+message Empty {}
+
+
+message GetAddressRequest {
+    string username = 1;
+}
+
+
+message GetAddressResponse {
+    string address = 1;
+    string status = 2;
+}
+
+
+service ServidorNombres {
+    rpc Register (RegisterRequest) returns (Empty);
+    rpc GetAddress (GetAddressRequest) returns (GetAddressResponse);
+}
+

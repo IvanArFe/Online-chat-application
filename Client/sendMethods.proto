@@ -1,6 +1,0 @@
-syntax = "proto3";
-import "google/protobuf/empty.proto";
-
-messahe clientID {
-    string clientName = 1;
-}
